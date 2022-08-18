@@ -1,3 +1,9 @@
+export interface FileOpenerOptions {
+  filePath: string;
+  contentType: string;
+  openWithDefault?: boolean;
+}
+
 export interface FileOpenerPlugin {
-  echo(options: { value: string }): Promise<{ value: string }>;
+  open(options: FileOpenerOptions): Promise<void>;
 }

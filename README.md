@@ -13,25 +13,36 @@ npx cap sync
 
 <docgen-index>
 
-* [`echo(...)`](#echo)
+* [`open(...)`](#open)
+* [Interfaces](#interfaces)
 
 </docgen-index>
 
 <docgen-api>
 <!--Update the source file JSDoc comments and rerun docgen to update the docs below-->
 
-### echo(...)
+### open(...)
 
 ```typescript
-echo(options: { value: string; }) => Promise<{ value: string; }>
+open(options: FileOpenerOptions) => Promise<void>
 ```
 
-| Param         | Type                            |
-| ------------- | ------------------------------- |
-| **`options`** | <code>{ value: string; }</code> |
-
-**Returns:** <code>Promise&lt;{ value: string; }&gt;</code>
+| Param         | Type                                                            |
+| ------------- | --------------------------------------------------------------- |
+| **`options`** | <code><a href="#fileopeneroptions">FileOpenerOptions</a></code> |
 
 --------------------
+
+
+### Interfaces
+
+
+#### FileOpenerOptions
+
+| Prop                  | Type                 |
+| --------------------- | -------------------- |
+| **`filePath`**        | <code>string</code>  |
+| **`contentType`**     | <code>string</code>  |
+| **`openWithDefault`** | <code>boolean</code> |
 
 </docgen-api>
