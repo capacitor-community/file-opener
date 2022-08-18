@@ -1,0 +1,16 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.ryltsov.alex.plugins.file.opener">
+
+    <application>
+        <provider
+            android:name=".FileOpenerProvider"
+            android:authorities="${applicationId}.file.opener.provider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_opener_paths"></meta-data>
+        </provider>
+    </application>
+
+</manifest>

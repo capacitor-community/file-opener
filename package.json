@@ -1,0 +1,70 @@
+{
+  "name": "@capacitor-community/file-opener",
+  "version": "1.0.0",
+  "description": "Capacitor File Opener. The plugin is able to open a file given the mimeType and the file uri.",
+  "main": "dist/plugin.cjs.js",
+  "module": "dist/esm/index.js",
+  "types": "dist/esm/index.d.ts",
+  "unpkg": "dist/plugin.js",
+  "files": [
+    "android/src/main/",
+    "android/build.gradle",
+    "dist/"
+  ],
+  "author": "Alex Ryltsov <ryltsov.alex@gmail.com>",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/capacitor-community/file-opener.git"
+  },
+  "bugs": {
+    "url": "https://github.com/capacitor-community/file-opener/issues"
+  },
+  "keywords": [
+    "capacitor",
+    "plugin",
+    "native"
+  ],
+  "scripts": {
+    "verify": "npm run verify:android",
+    "verify:android": "cd android && ./gradlew clean build test && cd ..",
+    "lint": "npm run eslint && npm run prettier -- --check",
+    "fmt": "npm run eslint -- --fix && npm run prettier -- --write",
+    "eslint": "eslint . --ext ts",
+    "prettier": "prettier \"**/*.{css,html,ts,js,java}\"",
+    "docgen": "docgen --api FileOpenerPlugin --output-readme README.md --output-json dist/docs.json",
+    "build": "npm run clean && npm run docgen && tsc && rollup -c rollup.config.js",
+    "clean": "rimraf ./dist",
+    "watch": "tsc --watch",
+    "prepublishOnly": "npm run build"
+  },
+  "devDependencies": {
+    "@capacitor/android": "^4.0.0",
+    "@capacitor/core": "^4.0.0",
+    "@capacitor/docgen": "^0.0.18",
+    "@ionic/eslint-config": "^0.3.0",
+    "@ionic/prettier-config": "^1.0.1",
+    "eslint": "^7.11.0",
+    "prettier": "~2.3.0",
+    "prettier-plugin-java": "~1.0.2",
+    "rimraf": "^3.0.2",
+    "rollup": "^2.32.0",
+    "typescript": "~4.1.5"
+  },
+  "peerDependencies": {
+    "@capacitor/core": "^3.0.0 || ^4.0.0"
+  },
+  "prettier": "@ionic/prettier-config",
+  "eslintConfig": {
+    "extends": "@ionic/eslint-config/recommended"
+  },
+  "capacitor": {
+    "android": {
+      "src": "android"
+    }
+  },
+  "engines": {
+    "node": ">=16.15.0 <17.0",
+    "npm": ">=8.10.0 <9.0"
+  }
+}
