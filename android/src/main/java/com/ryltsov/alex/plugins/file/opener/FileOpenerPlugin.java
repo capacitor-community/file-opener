@@ -4,14 +4,11 @@ import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
 import android.webkit.MimeTypeMap;
-
 import androidx.core.content.FileProvider;
-
 import com.getcapacitor.Plugin;
 import com.getcapacitor.PluginCall;
 import com.getcapacitor.PluginMethod;
 import com.getcapacitor.annotation.CapacitorPlugin;
-
 import java.io.File;
 
 @CapacitorPlugin(name = "FileOpener")
@@ -54,7 +51,6 @@ public class FileOpenerPlugin extends Plugin {
         } else {
             call.reject("File not found");
         }
-
     }
 
     private String getMimeType(String url) {

@@ -7,16 +7,10 @@ This guide provides instructions for contributing to this Capacitor plugin.
 ### Local Setup
 
 1. Fork and clone the repo.
-1. Install the dependencies.
+2. Install the dependencies.
 
     ```shell
     npm install
-    ```
-
-1. Install SwiftLint if you're on macOS.
-
-    ```shell
-    brew install swiftlint
     ```
 
 ### Scripts
@@ -31,15 +25,15 @@ Then, Rollup will bundle the code into a single file at `dist/plugin.js`. This f
 
 #### `npm run verify`
 
-Build and validate the web and native projects.
+Build and validate the android native project.
 
-This is useful to run in CI to verify that the plugin builds for all platforms.
+This is useful to run in CI to verify that the plugin builds for Android platform.
 
 #### `npm run lint` / `npm run fmt`
 
 Check formatting and code quality, autoformat/autofix if possible.
 
-This template is integrated with ESLint, Prettier, and SwiftLint. Using these tools is completely optional, but the [Capacitor Community](https://github.com/capacitor-community/) strives to have consistent code style and structure for easier cooperation.
+This template is integrated with ESLint, Prettier. Using these tool is completely optional, but the [Capacitor Community](https://github.com/capacitor-community/) strives to have consistent code style and structure for easier cooperation.
 
 ## Publishing
 
