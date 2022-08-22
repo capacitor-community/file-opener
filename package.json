@@ -9,7 +9,9 @@
   "files": [
     "android/src/main/",
     "android/build.gradle",
-    "dist/"
+    "dist/",
+    "ios/Plugin/",
+    "CapacitorCommunityFileOpener.podspec"
   ],
   "author": "Alex Ryltsov <ryltsov.alex@gmail.com>",
   "license": "MIT",
@@ -26,12 +28,14 @@
     "native"
   ],
   "scripts": {
-    "verify": "npm run verify:android",
+    "verify": "npm run verify:ios && npm run verify:android",
+    "verify:ios": "cd ios && pod install && xcodebuild -workspace Plugin.xcworkspace -scheme Plugin -destination generic/platform=iOS && cd ..",
     "verify:android": "cd android && ./gradlew clean build test && cd ..",
-    "lint": "npm run eslint && npm run prettier -- --check",
-    "fmt": "npm run eslint -- --fix && npm run prettier -- --write",
+    "lint": "npm run eslint && npm run prettier -- --check && npm run swiftlint -- lint",
+    "fmt": "npm run eslint -- --fix && npm run prettier -- --write && npm run swiftlint -- --fix --format",
     "eslint": "eslint . --ext ts",
     "prettier": "prettier \"**/*.{css,html,ts,js,java}\"",
+    "swiftlint": "node-swiftlint",
     "docgen": "docgen --api FileOpenerPlugin --output-readme README.md --output-json dist/docs.json",
     "build": "npm run clean && npm run docgen && tsc && rollup -c rollup.config.js",
     "clean": "rimraf ./dist",
@@ -42,13 +46,16 @@
     "@capacitor/android": "^4.0.0",
     "@capacitor/core": "^4.0.0",
     "@capacitor/docgen": "^0.0.18",
+    "@capacitor/ios": "^4.0.1",
     "@ionic/eslint-config": "^0.3.0",
     "@ionic/prettier-config": "^1.0.1",
+    "@ionic/swiftlint-config": "^1.1.2",
     "eslint": "^7.11.0",
     "prettier": "~2.3.0",
     "prettier-plugin-java": "~1.0.2",
     "rimraf": "^3.0.2",
     "rollup": "^2.32.0",
+    "swiftlint": "^1.0.1",
     "typescript": "~4.1.5"
   },
   "peerDependencies": {
@@ -61,6 +68,9 @@
   "capacitor": {
     "android": {
       "src": "android"
+    },
+    "ios": {
+      "src": "ios"
     }
   },
   "engines": {
