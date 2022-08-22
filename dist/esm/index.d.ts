@@ -1,4 +1,4 @@
-import type { FileOpenerPlugin } from './definitions.js';
+import type { FileOpenerPlugin } from './definitions';
 declare const FileOpener: FileOpenerPlugin;
-export * from './definitions.js';
+export * from './definitions';
 export { FileOpener };
