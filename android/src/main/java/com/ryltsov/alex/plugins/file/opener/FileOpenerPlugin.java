@@ -9,6 +9,9 @@ import com.getcapacitor.Plugin;
 import com.getcapacitor.PluginCall;
 import com.getcapacitor.PluginMethod;
 import com.getcapacitor.annotation.CapacitorPlugin;
+
+import org.json.JSONObject;
+
 import java.io.File;
 
 @CapacitorPlugin(name = "FileOpener")
@@ -45,11 +48,13 @@ public class FileOpenerPlugin extends Plugin {
                     getActivity().startActivity(Intent.createChooser(intent, "Open File in..."));
                 }
                 call.resolve();
+            } catch (android.content.ActivityNotFoundException exception) {
+                call.reject("Activity not found: " + exception.getMessage(), "8", exception);
             } catch (Exception exception) {
-                call.reject(exception.getLocalizedMessage(), null, exception);
+                call.reject(exception.getLocalizedMessage(), "1", exception);
             }
         } else {
-            call.reject("File not found");
+            call.reject("File not found", "9");
         }
     }
 
