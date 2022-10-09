@@ -33,7 +33,7 @@
 
 ## About
 
-This plugin is similar to cordova-plugin-file-opener2 but without installation support. The plugin supports Android platform only.
+This plugin is similar to cordova-plugin-file-opener2 but without installation support.
 
 ## Installation
 
