@@ -58,6 +58,7 @@ public class FileOpenerPlugin: CAPPlugin, UIDocumentInteractionControllerDelegat
                 return
             }
 
+
             self.documentInteractionController = UIDocumentInteractionController.init(url: fileURL)
             self.documentInteractionController.uti = uti
             self.documentInteractionController.delegate = self
@@ -71,8 +72,26 @@ public class FileOpenerPlugin: CAPPlugin, UIDocumentInteractionControllerDelegat
                     call.reject("Internal error. View not found!", "1")
                     return
                 }
-                let rect = CGRect(x: 0, y: 0, width: view.frame.width, height: view.frame.height);
-                wasOpened = self.documentInteractionController.presentOpenInMenu(from: rect, in: view, animated: true)
+                if UIDevice.current.userInterfaceIdiom == .pad {
+                    if
+                        let chooserPosition = call.options["chooserPosition"] as? JSObject,
+                        let x = chooserPosition["x"] as? Float,
+                        let y = chooserPosition["y"] as? Float
+                    {
+                        let rect = CGRect(x: 0, y: 0, width: CGFloat(x), height: CGFloat(y));
+                        wasOpened = self.documentInteractionController.presentOpenInMenu(from: rect, in: view, animated: true)
+                    } else {
+                        let activityViewController = UIActivityViewController(activityItems: [fileURL], applicationActivities: nil)
+                        activityViewController.popoverPresentationController?.permittedArrowDirections = UIPopoverArrowDirection(rawValue: 0)
+                        activityViewController.popoverPresentationController?.sourceView = view
+                        activityViewController.popoverPresentationController?.sourceRect = CGRect(x: view.frame.midX, y: view.frame.midY, width: 0, height: 0)
+                        self.bridge?.viewController?.present(activityViewController, animated: true, completion: nil)
+                        wasOpened = true
+                    }
+                } else {
+                    let rect = CGRect(x: 0, y: 0, width: view.frame.width, height: view.frame.height);
+                    wasOpened = self.documentInteractionController.presentOpenInMenu(from: rect, in: view, animated: true)
+                }
             }
 
             if (wasOpened == false) {
@@ -85,7 +104,7 @@ public class FileOpenerPlugin: CAPPlugin, UIDocumentInteractionControllerDelegat
             }
         })
     }
-
+    
     public func documentInteractionControllerViewControllerForPreview(_ controller: UIDocumentInteractionController) -> UIViewController {
         var presentingViewController = bridge?.viewController;
         while (presentingViewController?.presentedViewController != nil && ((presentingViewController?.presentedViewController!.isBeingDismissed) != nil)) {
