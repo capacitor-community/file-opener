@@ -31,6 +31,17 @@ export interface FileOpenerOptions {
    * @since 1.0.0
    */
   openWithDefault?: boolean;
+  /**
+   * (iOS only; iPad only) Position to anchor the chooser (ShareSheet) menu in the view (optional)
+   * Please note that this is applicable only when the application runs on iPad and when
+   * openWithDefault is false, otherwise this is ignored
+   *
+   * @since 1.0.3
+   */
+   chooserPosition?: {
+    x: number;
+    y: number;
+  };
 }
 
 export interface FileOpenerPlugin {
