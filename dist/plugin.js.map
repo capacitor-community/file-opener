@@ -1,0 +1,1 @@
+{"version":3,"file":"plugin.js","sources":["esm/index.js"],"sourcesContent":["import { registerPlugin } from '@capacitor/core';\nconst FileOpener = registerPlugin('FileOpener');\nexport * from './definitions.js';\nexport { FileOpener };\n//# sourceMappingURL=index.js.map"],"names":["registerPlugin"],"mappings":";;;AACK,OAAC,UAAU,GAAGA,mBAAc,CAAC,YAAY;;;;;;;;;;"}
