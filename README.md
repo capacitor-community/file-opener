@@ -111,7 +111,7 @@ If you app needs to open files in the external directories, then within your `An
 </manifest>
 ```
 ### iOS
-You'll need to set ios/App/Podfile to version 13 or higher
+You'll need to set ios/App/Podfile to version 13 or higher (for more details please [see](https://capacitorjs.com/docs/ios#ios-support))
 ```
 platform :ios '13.0'
 ```
