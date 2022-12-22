@@ -2,6 +2,10 @@
 
 All notable changes to this project will be documented in this file.
 
+## [v1.0.4](https://github.com/capacitor-community/file-opener/compare/v1.0.3...v1.0.4) (2022-12-22)
+  ### Chores
+  * Support Node 14 ([#24](https://github.com/capacitor-community/file-opener/pull/24)) and ([#25](https://github.com/capacitor-community/file-opener/pull/25)), ([33b0d93](https://github.com/capacitor-community/file-opener/commit/33b0d931e515aa2f2901b277fd5d529f8f14bd55)), closes [#23](https://github.com/capacitor-community/file-opener/issues/23)
+
 ## [v1.0.3](https://github.com/capacitor-community/file-opener/compare/v1.0.2...v1.0.3) (2022-11-01)
   ### Bug Fixes
   * ShareSheet do not open on iPad when openWithDefault: false ([#15](https://github.com/capacitor-community/file-opener/pull/15)), ([b07ca8e](https://github.com/capacitor-community/file-opener/commit/b07ca8ebf390c2307d9794279c04405cf96a5d29)), closes [#13](https://github.com/capacitor-community/file-opener/issues/13)
