@@ -40,13 +40,14 @@
     "build": "npm run clean && npm run docgen && tsc && rollup --bundleConfigAsCjs -c rollup.config.js",
     "clean": "rimraf ./dist",
     "watch": "tsc --watch",
-    "prepublishOnly": "npm run build"
+    "prepublishOnly": "npm run build",
+    "prepare": "npm run build"
   },
   "devDependencies": {
-    "@capacitor/android": "^5.0.0-beta.0",
-    "@capacitor/core": "^5.0.0-beta.0",
+    "@capacitor/android": "^5.0.0-beta.2",
+    "@capacitor/core": "^5.0.0-beta.2",
     "@capacitor/docgen": "^0.2.0",
-    "@capacitor/ios": "^5.0.0-beta.0",
+    "@capacitor/ios": "^5.0.0-beta.2",
     "@ionic/eslint-config": "^0.3.0",
     "@ionic/prettier-config": "^2.0.0",
     "@ionic/swiftlint-config": "^1.1.2",
@@ -60,7 +61,7 @@
     "typescript": "^4.8.4"
   },
   "peerDependencies": {
-    "@capacitor/core": "^3.0.0 || ^4.0.0 || ^5.0.0 || next || 5.0.0-beta.2" 
+    "@capacitor/core": "5.0.0-beta.2" 
   },
   "prettier": "@ionic/prettier-config",
   "eslintConfig": {
