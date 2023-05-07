@@ -2,6 +2,10 @@
 
 All notable changes to this project will be documented in this file.
 
+## [v1.0.5](https://github.com/capacitor-community/file-opener/compare/v1.0.4...v1.0.5) (2023-05-07)
+  ### Chores
+  * Capacitor 5 support ([#35](https://github.com/capacitor-community/file-opener/pull/35)), ([06d1c76](https://github.com/capacitor-community/file-opener/commit/06d1c76a31a488a7d4b018d198a5827060359506)), closes [#36](https://github.com/capacitor-community/file-opener/issues/36) and [#37](https://github.com/capacitor-community/file-opener/issues/37)
+
 ## [v1.0.4](https://github.com/capacitor-community/file-opener/compare/v1.0.3...v1.0.4) (2022-12-22)
   ### Chores
   * Support Node 14 ([#24](https://github.com/capacitor-community/file-opener/pull/24)) and ([#25](https://github.com/capacitor-community/file-opener/pull/25)), ([33b0d93](https://github.com/capacitor-community/file-opener/commit/33b0d931e515aa2f2901b277fd5d529f8f14bd55)), closes [#23](https://github.com/capacitor-community/file-opener/issues/23)
