@@ -34,6 +34,11 @@
 ## About
 
 This plugin is similar to cordova-plugin-file-opener2 but without installation support.
+<br>
+**NOTE**: The plugin version 1.0.5 is compatible with Capacitor 5 which requires gradle version 8.0
+<br>
+If you are using Capacitor 4, use [version 1.0.4](https://github.com/capacitor-community/file-opener/releases/tag/v1.0.4)
+<br>
 
 ## Installation
 
