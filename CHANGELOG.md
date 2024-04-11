@@ -2,7 +2,7 @@
 
 All notable changes to this project will be documented in this file.
 
-## [v1.0.5](https://github.com/capacitor-community/file-opener/compare/v1.0.5...v1.0.6) (2024-04-11)
+## [v1.0.6](https://github.com/capacitor-community/file-opener/compare/v1.0.5...v1.0.6) (2024-04-11)
 
 ### Chores
 
