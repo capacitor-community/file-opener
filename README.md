@@ -26,10 +26,9 @@
 
 ## Maintainers
 
-| Maintainer | GitHub                                | Active |
-| ---------- | ------------------------------------- | ------ |
-| ryaa       | [ryaa](https://github.com/ryaa)       | yes    |
-
+| Maintainer | GitHub                          | Active |
+| ---------- | ------------------------------- | ------ |
+| ryaa       | [ryaa](https://github.com/ryaa) | yes    |
 
 ## About
 
@@ -45,6 +44,23 @@ If you are using Capacitor 4, use [version 1.0.4](https://github.com/capacitor-c
 ```bash
 npm install @capacitor-community/file-opener
 npx cap sync
+```
+
+## Usage
+
+```typescript
+import { FileOpener } from '@capacitor-community/file-opener';
+
+try {
+  const fileOpenerOptions: FileOpenerOptions = {
+    filePath: 'file:///path/to/file',
+    contentType: 'application/pdf',
+    openWithDefault: true,
+  };
+  await FileOpener.open(fileOpenerOptions);
+} catch (e) {
+  console.log('Error opening file', e);
+}
 ```
 
 ## API
@@ -93,15 +109,16 @@ file open method options
 </docgen-api>
 
 ### List of Error Codes and Meanings
+
 When an error is thrown, one of the following codes (as a string value) will be used.
 
-| Code | Description                      |
-|-----:|:---------------------------------|
-|   '1' | `INTERNAL_ERROR`                |
-|   '2' | `INVALID_ARGUMENT`              |
-'   '8' | `FILE_NOT_SUPPORTED`            |
-|   '9' | `FILE_NOT_FOUND`                |
-|  '10' | `UNKNOWN`                       |
+|  Code | Description          |
+| ----: | :------------------- |
+|   '1' | `INTERNAL_ERROR`     |
+|   '2' | `INVALID_ARGUMENT`   |
+| ' '8' | `FILE_NOT_SUPPORTED` |
+|   '9' | `FILE_NOT_FOUND`     |
+|  '10' | `UNKNOWN`            |
 
 ### Android
 
@@ -115,9 +132,13 @@ If you app needs to open files in the external directories, then within your `An
 
 </manifest>
 ```
+
 ### iOS
+
 You'll need to set ios/App/Podfile to version 13 or higher (for more details please [see](https://capacitorjs.com/docs/ios#ios-support))
+
 ```
 platform :ios '13.0'
 ```
+
 then `npx cap sync ios`

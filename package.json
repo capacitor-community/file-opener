@@ -1,6 +1,6 @@
 {
   "name": "@capacitor-community/file-opener",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "Capacitor File Opener. The plugin is able to open a file given the mimeType and the file uri.",
   "main": "dist/plugin.cjs.js",
   "module": "dist/esm/index.js",
