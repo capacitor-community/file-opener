@@ -49,7 +49,7 @@ npx cap sync
 ## Usage
 
 ```typescript
-import { FileOpener } from '@capacitor-community/file-opener';
+import { FileOpener, FileOpenerOptions } from '@capacitor-community/file-opener';
 
 try {
   const fileOpenerOptions: FileOpenerOptions = {
