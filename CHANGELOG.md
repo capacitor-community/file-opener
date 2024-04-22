@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file.
 
+## [v6.0.9](https://github.com/capacitor-community/file-opener/compare/v1.0.6...v6.0.0) (2024-04-22)
+
+### Chores
+
+- support capacitor v6.0.0 ([#55](https://github.com/capacitor-community/file-opener/pull/55)), ([9427ffc](https://github.com/capacitor-community/file-opener/commit/9427ffc4acd2a5bbf93a66fe89d5574d610beee8)), closes [#54](https://github.com/capacitor-community/file-opener/issues/54)
+
 ## [v1.0.6](https://github.com/capacitor-community/file-opener/compare/v1.0.5...v1.0.6) (2024-04-11)
 
 ### Chores

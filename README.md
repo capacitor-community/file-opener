@@ -6,9 +6,6 @@
 </p>
 
 <p align="center">
-  <img src="https://img.shields.io/maintenance/yes/2022?style=flat-square" />
-  <a href="https://www.npmjs.com/package/@capacitor-community/file-opener"><img src="https://img.shields.io/npm/l/@capacitor-community/file-opener?style=flat-square" /></a>
-<br>
   <a href="https://www.npmjs.com/package/@capacitor-community/file-opener"><img src="https://img.shields.io/npm/dw/@capacitor-community/file-opener?style=flat-square" /></a>
   <a href="https://www.npmjs.com/package/@capacitor-community/file-opener"><img src="https://img.shields.io/npm/v/@capacitor-community/file-opener?style=flat-square" /></a>
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
@@ -20,6 +17,7 @@
 
 - [Maintainers](#maintainers)
 - [About](#about)
+- [Plugin versions](#plugin-versions)
 - [Installation](#installation)
 - [API](#api)
 - [Troubleshooting](#troubleshooting)
@@ -33,11 +31,14 @@
 ## About
 
 This plugin is similar to cordova-plugin-file-opener2 but without installation support.
-<br>
-**NOTE**: The plugin version 1.0.5 is compatible with Capacitor 5 which requires gradle version 8.0
-<br>
-If you are using Capacitor 4, use [version 1.0.4](https://github.com/capacitor-community/file-opener/releases/tag/v1.0.4)
-<br>
+
+## Plugin versions
+
+| Capacitor version | Plugin version |
+| ----------------- | -------------- |
+| 6.x               | 6.x            |
+| 5.x               | 1.0.5          |
+| 4.x               | 1.0.4          |
 
 ## Installation
 
