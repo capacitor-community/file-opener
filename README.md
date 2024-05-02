@@ -23,7 +23,6 @@
 - [Plugin versions](#plugin-versions)
 - [Installation](#installation)
 - [API](#api)
-- [Troubleshooting](#troubleshooting)
 
 ## Maintainers
 
