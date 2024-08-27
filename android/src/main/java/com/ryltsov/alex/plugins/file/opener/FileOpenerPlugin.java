@@ -9,6 +9,7 @@ import com.getcapacitor.Plugin;
 import com.getcapacitor.PluginCall;
 import com.getcapacitor.PluginMethod;
 import com.getcapacitor.annotation.CapacitorPlugin;
+import android.content.ContentResolver;
 
 import org.json.JSONObject;
 
@@ -24,22 +25,21 @@ public class FileOpenerPlugin extends Plugin {
         boolean openWithDefault = call.getBoolean("openWithDefault", true);
 
         String fileName = "";
+        Uri fileUri = null;
         try {
-            Uri fileUri = Uri.parse(filePath);
+            fileUri = Uri.parse(filePath);
             fileName = fileUri.getPath();
         } catch (Exception e) {
             fileName = filePath;
         }
-        File file = new File(fileName);
-        if (file.exists()) {
+
+        if (filePath.startsWith("content://")) {
             try {
                 if (contentType == null || contentType.trim().equals("")) {
-                    contentType = getMimeType(fileName);
+                    contentType = getMimeType(fileUri);
                 }
                 Intent intent = new Intent(Intent.ACTION_VIEW);
-                Context context = getActivity().getApplicationContext();
-                Uri path = FileProvider.getUriForFile(context, getActivity().getPackageName() + ".file.opener.provider", file);
-                intent.setDataAndType(path, contentType);
+                intent.setDataAndType(fileUri, contentType);
                 intent.setFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION);
 
                 if (openWithDefault) {
@@ -54,19 +54,55 @@ public class FileOpenerPlugin extends Plugin {
                 call.reject(exception.getLocalizedMessage(), "1", exception);
             }
         } else {
-            call.reject("File not found", "9");
+            File file = new File(fileName);
+            if (file.exists()) {
+                try {
+                    if (contentType == null || contentType.trim().equals("")) {
+                        contentType = getMimeType(fileName);
+                    }
+                    Intent intent = new Intent(Intent.ACTION_VIEW);
+                    Context context = getActivity().getApplicationContext();
+                    Uri path = FileProvider.getUriForFile(context, getActivity().getPackageName() + ".file.opener.provider", file);
+                    intent.setDataAndType(path, contentType);
+                    intent.setFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION);
+
+                    if (openWithDefault) {
+                        getActivity().startActivity(intent);
+                    } else {
+                        getActivity().startActivity(Intent.createChooser(intent, "Open File in..."));
+                    }
+                    call.resolve();
+                } catch (android.content.ActivityNotFoundException exception) {
+                    call.reject("Activity not found: " + exception.getMessage(), "8", exception);
+                } catch (Exception exception) {
+                    call.reject(exception.getLocalizedMessage(), "1", exception);
+                }
+            } else {
+                call.reject("File not found", "9");
+            }
         }
     }
 
     private String getMimeType(String url) {
-        String mimeType = "*/*";
-        int extensionIndex = url.lastIndexOf('.');
-        if (extensionIndex > 0) {
-            String extMimeType = MimeTypeMap.getSingleton().getMimeTypeFromExtension(url.substring(extensionIndex + 1));
-            if (extMimeType != null) {
-                mimeType = extMimeType;
+        String type = null;
+        String extension = MimeTypeMap.getFileExtensionFromUrl(url);
+        if (extension != null) {
+            type = MimeTypeMap.getSingleton().getMimeTypeFromExtension(extension);
+        }
+        return type;
+    }
+
+    private String getMimeType(Uri uri) {
+        String type = null;
+        if (uri.getScheme().equals(ContentResolver.SCHEME_CONTENT)) {
+            ContentResolver cr = getActivity().getContentResolver();
+            type = cr.getType(uri);
+        } else {
+            String extension = MimeTypeMap.getFileExtensionFromUrl(uri.toString());
+            if (extension != null) {
+                type = MimeTypeMap.getSingleton().getMimeTypeFromExtension(extension);
             }
         }
-        return mimeType;
+        return type;
     }
 }
