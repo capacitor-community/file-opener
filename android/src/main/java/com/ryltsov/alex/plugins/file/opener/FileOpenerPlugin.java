@@ -9,6 +9,7 @@ import com.getcapacitor.Plugin;
 import com.getcapacitor.PluginCall;
 import com.getcapacitor.PluginMethod;
 import com.getcapacitor.annotation.CapacitorPlugin;
+import android.database.Cursor;
 import android.content.ContentResolver;
 
 import org.json.JSONObject;
@@ -34,20 +35,25 @@ public class FileOpenerPlugin extends Plugin {
         }
 
         if (filePath.startsWith("content://")) {
-            try {
-                if (contentType == null || contentType.trim().equals("")) {
-                    contentType = getMimeType(fileUri);
-                }
-                Intent intent = new Intent(Intent.ACTION_VIEW);
-                intent.setDataAndType(fileUri, contentType);
-                intent.setFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION);
+            ContentResolver contentResolver = getActivity().getContentResolver();
+            try (Cursor cursor = contentResolver.query(fileUri, null, null, null, null)) {
+                if (cursor != null && cursor.getCount() > 0) {
+                    if (contentType == null || contentType.trim().equals("")) {
+                        contentType = getMimeType(fileUri);
+                    }
+                    Intent intent = new Intent(Intent.ACTION_VIEW);
+                    intent.setDataAndType(fileUri, contentType);
+                    intent.setFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION);
 
-                if (openWithDefault) {
-                    getActivity().startActivity(intent);
+                    if (openWithDefault) {
+                        getActivity().startActivity(intent);
+                    } else {
+                        getActivity().startActivity(Intent.createChooser(intent, "Open File in..."));
+                    }
+                    call.resolve();
                 } else {
-                    getActivity().startActivity(Intent.createChooser(intent, "Open File in..."));
+                    call.reject("File not found", "9");
                 }
-                call.resolve();
             } catch (android.content.ActivityNotFoundException exception) {
                 call.reject("Activity not found: " + exception.getMessage(), "8", exception);
             } catch (Exception exception) {
