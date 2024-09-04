@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file.
 
+## [v6.0.1](https://github.com/capacitor-community/file-opener/compare/v6.0.0...v6.0.1) (2024-09-04)
+
+### Enhancements
+
+- added support for content:// paths on Android ([#61](https://github.com/capacitor-community/file-opener/pull/61)), ([8f20fdc](https://github.com/capacitor-community/file-opener/commit/8f20fdc98a65873f89424282a0b1db43e46ae1f4))
+
+### Chores
+
+- updated dev dependencies to the latest versions
+
 ## [v6.0.0](https://github.com/capacitor-community/file-opener/compare/v1.0.6...v6.0.0) (2024-04-22)
 
 ### Chores
