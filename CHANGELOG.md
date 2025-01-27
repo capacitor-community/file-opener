@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file.
 
+## [v7.0.0](https://github.com/capacitor-community/file-opener/compare/v6.0.1...v7.0.0) (2025-01-27)
+
+### Chores
+
+- support capacitor v7.0.0 ([#71](https://github.com/capacitor-community/file-opener/pull/71)), ([884c15c](https://github.com/capacitor-community/file-opener/commit/884c15cb33785dc48195c398a2d3b17734d494cb)), closes [#69](https://github.com/capacitor-community/file-opener/issues/69)
+- added **example-app** to demo the file opener plugin usage
+
 ## [v6.0.1](https://github.com/capacitor-community/file-opener/compare/v6.0.0...v6.0.1) (2024-09-04)
 
 ### Enhancements
