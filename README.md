@@ -73,8 +73,8 @@ or please see **example-app** for a complete example.
 
 <docgen-index>
 
-- [`open(...)`](#open)
-- [Interfaces](#interfaces)
+* [`open(...)`](#open)
+* [Interfaces](#interfaces)
 
 </docgen-index>
 
@@ -95,9 +95,11 @@ Method to open a file.
 
 **Since:** 1.0.0
 
----
+--------------------
+
 
 ### Interfaces
+
 
 #### FileOpenerOptions
 
