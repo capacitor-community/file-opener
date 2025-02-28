@@ -5,7 +5,12 @@ import Capacitor
  * here: https://capacitorjs.com/docs/plugins/ios
  */
 @objc(FileOpenerPlugin)
-public class FileOpenerPlugin: CAPPlugin, UIDocumentInteractionControllerDelegate {
+public class FileOpenerPlugin: CAPPlugin, UIDocumentInteractionControllerDelegate, CAPBridgedPlugin {
+    public let identifier = "FileOpenerPlugin" 
+    public let jsName = "FileOpener" 
+    public let pluginMethods: [CAPPluginMethod] = [
+        CAPPluginMethod(name: "open", returnType: CAPPluginReturnPromise),
+    ] 
 
     var documentInteractionController : UIDocumentInteractionController!
     var call: CAPPluginCall!
