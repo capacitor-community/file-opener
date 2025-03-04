@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file.
 
+## [v7.0.1](https://github.com/capacitor-community/file-opener/compare/v7.0.0...v7.0.1) (2025-03-04)
+
+### Enhancements
+
+- support for spm ([#75](https://github.com/capacitor-community/file-opener/pull/75)), ([f210f49](https://github.com/capacitor-community/file-opener/commit/f210f4966f18aa4e82e6478be1ebce28495295f4)), closes [#69](https://github.com/capacitor-community/file-opener/issues/64)
+- bumped **example-app** to v7.0.1
+
 ## [v7.0.0](https://github.com/capacitor-community/file-opener/compare/v6.0.1...v7.0.0) (2025-01-27)
 
 ### Chores

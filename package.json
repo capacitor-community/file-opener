@@ -1,6 +1,6 @@
 {
   "name": "@capacitor-community/file-opener",
-  "version": "7.0.0",
+  "version": "7.0.1",
   "description": "Capacitor File Opener. The plugin is able to open a file given the mimeType and the file uri.",
   "main": "dist/plugin.cjs.js",
   "module": "dist/esm/index.js",
@@ -11,7 +11,8 @@
     "android/build.gradle",
     "dist/",
     "ios/Plugin/",
-    "CapacitorCommunityFileOpener.podspec"
+    "CapacitorCommunityFileOpener.podspec",
+    "Package.swift"
   ],
   "author": "Alex Ryltsov <ryltsov.alex@gmail.com>",
   "license": "MIT",

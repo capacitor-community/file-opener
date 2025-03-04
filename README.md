@@ -73,8 +73,8 @@ or please see **example-app** for a complete example.
 
 <docgen-index>
 
-* [`open(...)`](#open)
-* [Interfaces](#interfaces)
+- [`open(...)`](#open)
+- [Interfaces](#interfaces)
 
 </docgen-index>
 
@@ -95,11 +95,9 @@ Method to open a file.
 
 **Since:** 1.0.0
 
---------------------
-
+---
 
 ### Interfaces
-
 
 #### FileOpenerOptions
 
@@ -141,10 +139,10 @@ If you app needs to open files in the external directories, then within your `An
 
 ### iOS
 
-You'll need to set ios/App/Podfile to version 13 or higher (for more details please [see](https://capacitorjs.com/docs/ios#ios-support))
+You'll need to set ios/App/Podfile to version 14 or higher (for more details please [see](https://capacitorjs.com/docs/ios#ios-support))
 
 ```
-platform :ios '13.0'
+platform :ios '14.0'
 ```
 
 then `npx cap sync ios`
