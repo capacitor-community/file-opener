@@ -1,5 +1,6 @@
 import XCTest
-@testable import Plugin
+import Capacitor
+@testable import FileOpenerPlugin
 
 class FileOpenerTests: XCTestCase {
     override func setUp() {
