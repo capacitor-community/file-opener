@@ -352,9 +352,9 @@
 				DEVELOPMENT_TEAM = 9XFYDGX5DN;
 				INFOPLIST_FILE = App/Info.plist;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.developer-tools";
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				MARKETING_VERSION = 7.0.1;
+				MARKETING_VERSION = 8.0.0;
 				OTHER_SWIFT_FLAGS = "$(inherited) \"-D\" \"COCOAPODS\" \"-DDEBUG\"";
 				PRODUCT_BUNDLE_IDENTIFIER = ryltsov.alex.file.opener.demo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -374,9 +374,9 @@
 				DEVELOPMENT_TEAM = 9XFYDGX5DN;
 				INFOPLIST_FILE = App/Info.plist;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.developer-tools";
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				MARKETING_VERSION = 7.0.1;
+				MARKETING_VERSION = 8.0.0;
 				PRODUCT_BUNDLE_IDENTIFIER = ryltsov.alex.file.opener.demo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "";

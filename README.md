@@ -150,10 +150,10 @@ If you app needs to open files in the external directories, then within your `An
 
 ### iOS
 
-You'll need to set ios/App/Podfile to version 14 or higher (for more details please [see](https://capacitorjs.com/docs/ios#ios-support))
+You'll need to set ios/App/Podfile to version 15 or higher (for more details please [see](https://capacitorjs.com/docs/ios#ios-support))
 
 ```
-platform :ios '14.0'
+platform :ios '15.0'
 ```
 
 then `npx cap sync ios`
