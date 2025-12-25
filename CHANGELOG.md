@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file.
 
+## [v8.0.0](https://github.com/capacitor-community/file-opener/compare/v7.0.1...v8.0.0) (2025-12-25)
+
+### Chores
+
+- support capacitor v8.0.0 ([#81](https://github.com/capacitor-community/file-opener/pull/81)), ([39b7e1f](https://github.com/capacitor-community/file-opener/commit/39b7e1f76ad2dad1059b46b02d675fc5f6574944))
+- bumped **example-app** to v8.0.0 and updated dependencies
+- bumbed node version to 22.21.1
+
 ## [v7.0.1](https://github.com/capacitor-community/file-opener/compare/v7.0.0...v7.0.1) (2025-03-04)
 
 ### Enhancements
