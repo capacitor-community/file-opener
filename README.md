@@ -18,11 +18,19 @@
 
 ## Table of Contents
 
+- [Table of Contents](#table-of-contents)
 - [Maintainers](#maintainers)
 - [About](#about)
 - [Plugin versions](#plugin-versions)
 - [Installation](#installation)
+- [Usage](#usage)
 - [API](#api)
+  - [open(...)](#open)
+  - [Interfaces](#interfaces)
+    - [FileOpenerOptions](#fileopeneroptions)
+  - [List of Error Codes and Meanings](#list-of-error-codes-and-meanings)
+  - [Android](#android)
+  - [iOS](#ios)
 
 ## Maintainers
 
@@ -38,6 +46,7 @@ This plugin is similar to cordova-plugin-file-opener2 but without installation s
 
 | Capacitor version | Plugin version |
 | ----------------- | -------------- |
+| 8.x               | 8.x            |
 | 7.x               | 7.x            |
 | 6.x               | 6.x            |
 | 5.x               | 1.0.5          |
@@ -73,8 +82,8 @@ or please see **example-app** for a complete example.
 
 <docgen-index>
 
-- [`open(...)`](#open)
-- [Interfaces](#interfaces)
+* [`open(...)`](#open)
+* [Interfaces](#interfaces)
 
 </docgen-index>
 
@@ -95,9 +104,11 @@ Method to open a file.
 
 **Since:** 1.0.0
 
----
+--------------------
+
 
 ### Interfaces
+
 
 #### FileOpenerOptions
 
