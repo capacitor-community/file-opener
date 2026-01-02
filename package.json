@@ -10,7 +10,9 @@
     "android/src/main/",
     "android/build.gradle",
     "dist/",
-    "ios/Plugin/",
+    "ios/Sources",
+    "ios/Tests",
+    "Package.swift",
     "CapacitorCommunityFileOpener.podspec",
     "Package.swift"
   ],
@@ -30,7 +32,7 @@
   ],
   "scripts": {
     "verify": "npm run verify:ios && npm run verify:android",
-    "verify:ios": "cd ios && pod install && xcodebuild -workspace Plugin.xcworkspace -scheme Plugin -destination generic/platform=iOS && cd ..",
+    "verify:ios": "xcodebuild -scheme CapacitorCommunityFileOpener -destination generic/platform=iOS",
     "verify:android": "cd android && ./gradlew clean build test && cd ..",
     "lint": "npm run eslint && npm run prettier -- --check && npm run swiftlint -- lint",
     "fmt": "npm run eslint -- --fix && npm run prettier -- --write && npm run swiftlint -- --fix --format",
