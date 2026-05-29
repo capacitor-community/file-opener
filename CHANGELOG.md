@@ -2,6 +2,17 @@
 
 All notable changes to this project will be documented in this file.
 
+## [v8.0.1](https://github.com/capacitor-community/file-opener/compare/v8.0.0...v8.0.1) (2026-05-29)
+
+### Enhancements
+
+- replace Android default ProGuard file with `proguard-android-optimize.txt` for AGP 9 compatibility ([#87](https://github.com/capacitor-community/file-opener/pull/87))
+
+### Chores
+
+- bumped **example-app** to v8.0.1
+- updated **example-app** Android build to AGP 9.2.1 and Gradle 9.4.1
+
 ## [v8.0.0](https://github.com/capacitor-community/file-opener/compare/v7.0.1...v8.0.0) (2025-12-25)
 
 ### Chores
